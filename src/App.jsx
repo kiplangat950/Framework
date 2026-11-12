@@ -6,6 +6,8 @@ import Footer from "./Components/Footer";
 import CartDrawer from "./Components/CartDrawer";
 import Features from "./Components/Features";
 import Highlights from "./Components/Highlights";
+import { PriceProvider } from "./Components/Usecontext";
+
 function App() {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -22,7 +24,7 @@ function App() {
   };
 
   return (
-    <>
+    <PriceProvider>
       <header className="app-header py-3 py-md-4">
         <NavBar cart={cart} onOpenCart={() => setIsCartOpen(true)} />
       </header>
@@ -45,7 +47,7 @@ function App() {
         cart={cart}
         removeFromCart={removeFromCart}
       />
-    </>
+    </PriceProvider>
   );
 }
 

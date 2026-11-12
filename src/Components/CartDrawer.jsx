@@ -1,10 +1,15 @@
 import { useState } from "react";
+import { usePrice } from "./Usecontext";
+
 
 export default function CartDrawer({ isOpen, onClose, cart, removeFromCart }) {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   if (!isOpen) return null;
 
   const cartTotal = cart.reduce((total, item) => total + item.price, 0);
+
+  const { currency } = usePrice();
+
 
   return (
     <>
@@ -66,7 +71,7 @@ export default function CartDrawer({ isOpen, onClose, cart, removeFromCart }) {
                       >
                         {item.name}
                       </h6>
-                      <small className="text-muted">${item.price}</small>
+                      <small className="text-muted">{currency}{item.price}</small>
                     </div>
                   </div>
 
@@ -88,7 +93,7 @@ export default function CartDrawer({ isOpen, onClose, cart, removeFromCart }) {
             <div className="border-top pt-3 mt-3">
               <div className="d-flex justify-content-between mb-3">
                 <span className="fw-bold fs-5">Total:</span>
-                <span className="fw-bold fs-5">${cartTotal}</span>
+                <span className="fw-bold fs-5">{currency}{cartTotal}</span>
               </div>
               <button
                 className="btn btn-primary w-100 py-2 fw-bold"
@@ -134,7 +139,7 @@ export default function CartDrawer({ isOpen, onClose, cart, removeFromCart }) {
                   className="list-group-item d-flex justify-content-between px-0"
                 >
                   <span>{item.name}</span>
-                  <span>${item.price}</span>
+                  <span>{currency}{item.price}</span>
                 </li>
               ))}
             </ul>
