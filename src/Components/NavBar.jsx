@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 
-// Accept onOpenCart from App
+
 export default function NavBar({ cart, onOpenCart }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
 

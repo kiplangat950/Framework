@@ -16,9 +16,9 @@ function App() {
     setCart([...cart, product]);
   };
 
-  // 1. New function to remove a specific item from the cart
+  
   const removeFromCart = (indexToRemove) => {
-    // Keep all items EXCEPT the one at the specified index
+
     const updatedCart = cart.filter((_, index) => index !== indexToRemove);
     setCart(updatedCart);
   };
@@ -40,7 +40,7 @@ function App() {
         <Footer />
       </footer>
 
-      {/* 2. Pass the remove function to the CartDrawer */}
+      {}
       <CartDrawer
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}

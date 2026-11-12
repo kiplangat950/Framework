@@ -7,7 +7,7 @@ export default function Hero() {
             className="hero-image img-fluid w-100 object-fit-cover"
             src="https://images.frame.work/frameworkmarketplace/aJBl86Tt2nPbZzs1_homepage_fw13-banner_desktop.jpg?auto=format%2Ccompress"
             alt="Framework 13 Pro laptop"
-            // Keeps the image tall enough on all screens so text doesn't spill
+            
             style={{ minHeight: "350px", objectPosition: "center" }}
           />
 

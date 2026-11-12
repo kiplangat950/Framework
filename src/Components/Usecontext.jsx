@@ -4,6 +4,15 @@ const PriceContext=createContext();
 export function PriceProvider({children}){
     const[currency,setCurrency]=useState("KES");
 
+
+
+
+
+
+
+
+    
+
     return(
         <PriceContext.Provider value={{currency,setCurrency}}>
             {children}
